@@ -1,56 +1,257 @@
 /* =========================================================================
- * MEGHANA PUVVADI - DEVOPS ENGINEER PROFILE
- * Structured for professional review.
+ * GENERAL STYLING
  * ========================================================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc; /* Light background */
+    color: #333;
+}
 
-.profile-header {
-    name: "Meghana Puvvadi";
-    title: "DevOps Engineer"; /* cite: 1, 2 */
-    experience-years: "3+ years"; /* cite: 5 */
-    location: "TX"; /* cite: 3 */
+/* =========================================================================
+ * TWO-COLUMN LAYOUT (Flexbox)
+ * ========================================================================= */
+#main-layout {
+    display: flex;
+    min-height: 100vh; /* Ensure the layout takes full viewport height */
 }
 
 /* -------------------------------------------------------------------------
- * CONTACT_INFO
+ * LEFT COLUMN: Fixed Profile
  * ------------------------------------------------------------------------- */
+#left-column {
+    /* Fixed Positioning */
+    width: 300px; /* Fixed width for the profile column */
+    min-width: 300px;
+    position: fixed; /* Stays visible when the right column scrolls */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto; /* Allows the left column content to scroll if it gets too long */
+    
+    /* Styling */
+    background: #2c3e50; /* Dark background for professional contrast */
+    color: white;
+    padding: 20px 10px;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#left-column header {
+    background: transparent;
+    padding: 0;
+    text-align: center;
+    border-bottom: none;
+}
+
+#left-column h1 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    color: white;
+}
+
+#left-column h2 {
+    font-size: 1.1em;
+    color: #bdc3c7;
+    margin-top: 0;
+}
+
 .contact-info {
-    phone: "+1 409-454-0070"; /* cite: 3 */
-    email: "puvvadimeghana2000@gmail.com"; /* cite: 3 */
-    linkedin: "https://linkedin.com/in/your-profile-link"; /* Add your actual link */
-    github: "https://github.com/your-username"; /* Add your actual link */
+    font-size: 0.9em;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    text-align: left;
+    display: block;
+    padding-left: 10px;
+}
+
+.contact-info i, #profile-summary i {
+    color: #3498db; /* Blue accent for icons */
+    margin-right: 8px;
+}
+
+#profile-summary {
+    padding: 20px 10px;
+}
+
+#profile-summary h3 {
+    color: #3498db;
+    font-size: 1.2em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+#profile-summary ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#profile-summary li {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/* Left Column Navigation */
+nav {
+    background: #34495e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    padding: 8px 15px;
+    display: block; /* Make links stack vertically */
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+}
+
+nav a:hover {
+    background-color: #3498db;
 }
 
 /* -------------------------------------------------------------------------
- * PROFESSIONAL_SUMMARY (Easy to Catch)
+ * RIGHT COLUMN: Scrolling Content
  * ------------------------------------------------------------------------- */
-.professional-summary {
-    focus: "CI/CD & Infrastructure Automation";
-    experience: "3+ years of experience in automating, building, deploying, and releasing code."; /* cite: 5 */
-    core-strength-1: "Expertise in Configuration Management (Chef, Ansible) and AWS Cloud Services."; /* cite: 6, 7 */
-    core-strength-2: "Well-versed in container orchestration using Docker and Kubernetes."; /* cite: 9, 14 */
-    ci-cd-stack: "JIRA, Jenkins, and GitHub for release and issue management."; /* cite: 8, 18, 19 */
+#right-column {
+    margin-left: 300px; /* Offset to clear the fixed left column */
+    flex-grow: 1; /* Takes up the remaining space */
+    padding: 0;
 }
 
-/* -------------------------------------------------------------------------
- * CORE_TECHNICAL_STACK
- * ------------------------------------------------------------------------- */
-.technical-stack {
-    cloud-services: "EC2, S3, VPC, CloudWatch, ELB, EBS, CloudFormation, IAM, RDS, Route53"; /* cite: 7, 15 */
-    config-management: "Chef, Ansible, Nagios"; /* cite: 6, 13 */
-    containers-orchestration: "Docker, Kubernetes"; /* cite: 14 */
-    scripting-languages: "Python, Perl, Shell Scripting"; /* cite: 16 */
-    ci-cd-tools: "Jenkins, Maven, Gradle"; /* cite: 18 */
-    monitoring-tools: "Nagios, CloudWatch, Splunk"; /* cite: 13, 15, 16 */
-    version-control: "Git, GitHub"; /* cite: 19 */
-    project-management: "Jira, ServiceNow"; /* cite: 19 */
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
+/* General Styling for Right Column Content */
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+h3 {
+    color: #2c3e50;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.skill-group {
+    background: #eef4f8;
+    padding: 12px;
+    border-left: 3px solid #3498db;
+    border-radius: 3px;
+}
+
+.skill-group h4 {
+    color: #3498db;
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+/* Experience Cards */
+.job-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    border-left: 5px solid #3498db;
+}
+
+.duration {
+    font-style: italic;
+    color: #777;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.job-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-card li {
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+    margin-bottom: 6px;
+}
+
+.job-card li:before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+}
+
+/* Footer */
+footer {
+    background: #f0f0f0;
+    color: #666;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    /* Important for 2-column layout: ensure it spans both columns */
+    position: relative; 
+    z-index: 5;
+    clear: both; 
+}
+
+
 /* -------------------------------------------------------------------------
- * EDUCATION
+ * RESPONSIVE ADJUSTMENTS (One Column on Small Screens)
  * ------------------------------------------------------------------------- */
-.education {
-    masters: "Master’s in Computer Science (Lamar University, Beaumont, TX)"; /* cite: 45, 46 */
-    masters-completion: "Dec 2024"; /* cite: 45 */
-    bachelors: "B. Tech in Computer Engineering (JNT University, Kakinada, India)"; /* cite: 47, 48 */
-    bachelors-completion: "Sept 2022"; /* cite: 47 */
+@media (max-width: 768px) {
+    #main-layout {
+        display: block; /* Stack columns vertically */
+    }
+
+    #left-column {
+        position: static; /* No longer fixed */
+        width: 100%;
+        height: auto;
+        min-width: auto;
+        overflow-y: visible;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #right-column {
+        margin-left: 0; /* Remove offset */
+    }
+
+    .content-container {
+        padding: 20px 15px;
+    }
 }
