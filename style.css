@@ -1,232 +1,268 @@
 /* =========================================================================
- * GENERAL STYLING
+ * GLOBAL STYLING
  * ========================================================================= */
+:root {
+    --color-primary: #1e1e1e;       /* Deep Charcoal for main text/background */
+    --color-secondary: #f4f4f4;     /* Light Gray for content background */
+    --color-accent: #00a880;        /* Tech Green for highlights/borders */
+    --color-dark-accent: #007a5e;   /* Darker Green for hover/focus */
+    --font-stack: 'Roboto', 'Arial', sans-serif;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-stack);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f7f9fc; /* Light background */
-    color: #333;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-dark-accent);
 }
 
 /* =========================================================================
- * TWO-COLUMN LAYOUT (Flexbox)
+ * TWO-COLUMN LAYOUT STRUCTURE
  * ========================================================================= */
 #main-layout {
     display: flex;
-    min-height: 100vh; /* Ensure the layout takes full viewport height */
+    min-height: 100vh;
 }
 
 /* -------------------------------------------------------------------------
- * LEFT COLUMN: Fixed Profile
+ * LEFT COLUMN: Fixed Profile & Navigation
  * ------------------------------------------------------------------------- */
 #left-column {
-    /* Fixed Positioning */
-    width: 300px; /* Fixed width for the profile column */
-    min-width: 300px;
-    position: fixed; /* Stays visible when the right column scrolls */
+    width: 320px; /* Slightly wider */
+    min-width: 320px;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    overflow-y: auto; /* Allows the left column content to scroll if it gets too long */
+    overflow-y: auto;
     
-    /* Styling */
-    background: #2c3e50; /* Dark background for professional contrast */
+    /* NEW STYLING */
+    background: var(--color-primary); /* Dark, fixed background */
     color: white;
-    padding: 20px 10px;
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px;
+    box-shadow: 6px 0 12px rgba(0, 0, 0, 0.3);
 }
 
 #left-column header {
     background: transparent;
     padding: 0;
-    text-align: center;
-    border-bottom: none;
+    text-align: left;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 20px;
 }
 
 #left-column h1 {
-    font-size: 1.8em;
-    margin-bottom: 5px;
+    font-size: 2.2em;
+    margin-bottom: 0;
     color: white;
+    font-weight: 700;
 }
 
 #left-column h2 {
-    font-size: 1.1em;
-    color: #bdc3c7;
-    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--color-accent); /* Title highlighted in green */
+    margin-top: 5px;
+    font-weight: 400;
 }
 
+/* Contact Info */
 .contact-info {
     font-size: 0.9em;
-    padding: 10px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0 0 0;
     margin-top: 15px;
 }
 
 .contact-info p {
-    margin: 5px 0;
-    text-align: left;
+    margin: 8px 0;
     display: block;
+    padding-left: 0;
+}
+
+.contact-info i {
+    color: var(--color-accent);
+    margin-right: 10px;
+    width: 15px; /* Alignment */
+}
+
+.contact-info a {
+    color: white; /* LinkedIn link color */
+    text-decoration: underline;
+}
+
+/* Navigation */
+#left-column nav {
+    background: transparent;
+    text-align: left;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#left-column nav a {
+    color: white;
+    padding: 10px 0;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+#left-column nav a:hover {
+    background-color: var(--color-dark-accent);
     padding-left: 10px;
 }
 
-.contact-info i, #profile-summary i {
-    color: #3498db; /* Blue accent for icons */
-    margin-right: 8px;
-}
-
+/* Profile Summary in Left Column */
 #profile-summary {
-    padding: 20px 10px;
+    padding: 20px 0;
 }
 
 #profile-summary h3 {
-    color: #3498db;
+    color: var(--color-accent);
     font-size: 1.2em;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 1px solid var(--color-accent);
     padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .tagline {
-    font-style: italic;
-    font-size: 0.95em;
+    font-weight: 600;
+    font-size: 1em;
     margin-bottom: 15px;
+    color: #ccc;
 }
 
 #profile-summary ul {
     list-style: none;
     padding-left: 0;
+    font-size: 0.9em;
 }
 
 #profile-summary li {
-    margin-bottom: 10px;
-    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #ccc;
 }
-
-/* Left Column Navigation */
-nav {
-    background: #34495e;
-    text-align: center;
-    padding: 10px 0;
-}
-
-nav a {
-    color: white;
-    padding: 8px 15px;
-    display: block; /* Make links stack vertically */
-    text-decoration: none;
-    transition: background-color 0.3s;
-    font-size: 0.9em;
-}
-
-nav a:hover {
-    background-color: #3498db;
-}
-
 /* -------------------------------------------------------------------------
- * RIGHT COLUMN: Scrolling Content
+ * RIGHT COLUMN: Scrolling Detailed Content
  * ------------------------------------------------------------------------- */
 #right-column {
-    margin-left: 300px; /* Offset to clear the fixed left column */
-    flex-grow: 1; /* Takes up the remaining space */
-    padding: 0;
+    margin-left: 320px;
+    flex-grow: 1;
+    background-color: white; /* White paper background for readability */
 }
 
 .content-container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 50px 30px;
 }
 
-/* General Styling for Right Column Content */
-section {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-}
-
+/* Headings in Right Column */
 h3 {
-    color: #2c3e50;
-    border-bottom: 3px solid #ddd;
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-accent); /* Green accent line */
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 1.8em;
+    font-weight: 600;
+}
+
+h3 i {
+    color: var(--color-dark-accent);
 }
 
 .card {
-    background: white;
-    padding: 25px;
+    background: var(--color-secondary); /* Light card background */
+    padding: 30px;
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
 }
 
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .skill-group {
-    background: #eef4f8;
-    padding: 12px;
-    border-left: 3px solid #3498db;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--color-accent);
     border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .skill-group h4 {
-    color: #3498db;
+    color: var(--color-primary);
     margin-top: 0;
     font-size: 1.1em;
+    font-weight: 600;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
 }
 
 /* Experience Cards */
 .job-card {
     background: white;
-    padding: 20px;
-    margin-bottom: 15px;
-    border: 1px solid #eee;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    border-left: 5px solid #3498db;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.job-card h4 {
+    color: var(--color-dark-accent);
+    font-size: 1.3em;
+    margin-bottom: 5px;
 }
 
 .duration {
     font-style: italic;
     color: #777;
-    margin-top: -5px;
-    margin-bottom: 10px;
-}
-
-.job-card ul {
-    list-style: none;
-    padding-left: 0;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .job-card li {
-    padding-left: 1.2em;
-    text-indent: -1.2em;
-    margin-bottom: 6px;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    margin-bottom: 8px;
 }
 
 .job-card li:before {
-    content: "•";
-    color: #3498db;
+    content: "»";
+    color: var(--color-accent);
     font-weight: bold;
     display: inline-block;
-    width: 1.2em;
+    width: 1.5em;
 }
 
 /* Footer */
 footer {
-    background: #f0f0f0;
+    background: #e0e0e0;
     color: #666;
     text-align: center;
     padding: 15px 0;
-    border-top: 1px solid #eee;
-    /* Important for 2-column layout: ensure it spans both columns */
+    font-size: 0.85em;
     position: relative; 
     z-index: 5;
     clear: both; 
+    border-top: 1px solid #ccc;
 }
 
 
@@ -235,20 +271,39 @@ footer {
  * ------------------------------------------------------------------------- */
 @media (max-width: 768px) {
     #main-layout {
-        display: block; /* Stack columns vertically */
+        display: block;
     }
 
     #left-column {
-        position: static; /* No longer fixed */
+        position: static;
         width: 100%;
         height: auto;
         min-width: auto;
         overflow-y: visible;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
+    
+    #left-column header {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
+    .contact-info p {
+        text-align: center;
+    }
+    
+    #profile-summary {
+        text-align: center;
+    }
+    
+    #profile-summary ul {
+        text-align: left;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
     #right-column {
-        margin-left: 0; /* Remove offset */
+        margin-left: 0;
     }
 
     .content-container {
