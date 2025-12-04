@@ -1,273 +1,56 @@
-/* General Styling & Setup */
-body {
-    font-family: 'Open Sans', Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #e9ecf1; /* Light professional gray */
-    color: #333;
+/* =========================================================================
+ * MEGHANA PUVVADI - DEVOPS ENGINEER PROFILE
+ * Structured for professional review.
+ * ========================================================================= */
+
+.profile-header {
+    name: "Meghana Puvvadi";
+    title: "DevOps Engineer"; /* cite: 1, 2 */
+    experience-years: "3+ years"; /* cite: 5 */
+    location: "TX"; /* cite: 3 */
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-/* Header/Hero Section - Strong and Focused */
-header {
-    background: #2c3e50; /* Dark Charcoal Blue */
-    color: white;
-    padding: 50px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-    margin-bottom: 5px;
-    font-size: 3em;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-header h2 {
-    margin-top: 0;
-    font-size: 1.3em;
-    font-weight: 300;
-    color: #bdc3c7;
-}
-
+/* -------------------------------------------------------------------------
+ * CONTACT_INFO
+ * ------------------------------------------------------------------------- */
 .contact-info {
-    margin-top: 20px;
-    font-size: 0.9em;
+    phone: "+1 409-454-0070"; /* cite: 3 */
+    email: "puvvadimeghana2000@gmail.com"; /* cite: 3 */
+    linkedin: "https://linkedin.com/in/your-profile-link"; /* Add your actual link */
+    github: "https://github.com/your-username"; /* Add your actual link */
 }
 
-.contact-info p {
-    margin: 4px 15px;
-    display: inline-block;
+/* -------------------------------------------------------------------------
+ * PROFESSIONAL_SUMMARY (Easy to Catch)
+ * ------------------------------------------------------------------------- */
+.professional-summary {
+    focus: "CI/CD & Infrastructure Automation";
+    experience: "3+ years of experience in automating, building, deploying, and releasing code."; /* cite: 5 */
+    core-strength-1: "Expertise in Configuration Management (Chef, Ansible) and AWS Cloud Services."; /* cite: 6, 7 */
+    core-strength-2: "Well-versed in container orchestration using Docker and Kubernetes."; /* cite: 9, 14 */
+    ci-cd-stack: "JIRA, Jenkins, and GitHub for release and issue management."; /* cite: 8, 18, 19 */
 }
 
-.contact-info i {
-    color: #3498db; /* Professional Blue Accent */
-    margin-right: 5px;
+/* -------------------------------------------------------------------------
+ * CORE_TECHNICAL_STACK
+ * ------------------------------------------------------------------------- */
+.technical-stack {
+    cloud-services: "EC2, S3, VPC, CloudWatch, ELB, EBS, CloudFormation, IAM, RDS, Route53"; /* cite: 7, 15 */
+    config-management: "Chef, Ansible, Nagios"; /* cite: 6, 13 */
+    containers-orchestration: "Docker, Kubernetes"; /* cite: 14 */
+    scripting-languages: "Python, Perl, Shell Scripting"; /* cite: 16 */
+    ci-cd-tools: "Jenkins, Maven, Gradle"; /* cite: 18 */
+    monitoring-tools: "Nagios, CloudWatch, Splunk"; /* cite: 13, 15, 16 */
+    version-control: "Git, GitHub"; /* cite: 19 */
+    project-management: "Jira, ServiceNow"; /* cite: 19 */
 }
 
-/* Navigation Bar */
-nav {
-    background: #34495e; /* Slightly lighter dark blue */
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    text-align: center;
-    border-bottom: 2px solid #3498db;
-}
-
-nav a {
-    color: white;
-    padding: 14px 20px;
-    display: inline-block;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #3498db;
-}
-
-/* Main Content Sections */
-section {
-    padding: 40px 0;
-    margin-bottom: 10px;
-}
-
-h3 {
-    color: #2c3e50;
-    border-bottom: 3px solid #3498db; /* Strong blue line */
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-transform: uppercase;
-}
-
-h4 {
-    color: #3498db;
-    margin-top: 0;
-    font-size: 1.25em;
-    font-weight: 600;
-}
-
-/* Card Styling for sections */
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-}
-
-/* Skills Grid - Using Tags/Badges for key technologies */
-#skills h4 {
-    color: #555;
-    font-size: 1.1em;
-    margin-bottom: 8px;
-    border-bottom: 1px dashed #eee;
-    padding-bottom: 5px;
-}
-
-.skills-grid p {
-    margin: 0;
-}
-
-.skill-tag {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 3px 8px;
-    margin: 4px 4px 4px 0;
-    border-radius: 3px;
-    font-size: 0.85em;
-    font-weight: 600;
-}
-
-/* Experience Section - Timeline Structure */
-#experience {
-    position: relative;
-    padding-left: 20px; /* Space for the timeline line */
-}
-
-/* Vertical Timeline Line */
-#experience::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 45%; /* Position the line roughly in the center */
-    width: 2px;
-    background-color: #bdc3c7;
-}
-
-.job-card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    width: 45%; /* Half the container width */
-}
-
-/* Positioning job cards on the timeline */
-#experience .job-card:nth-child(even) {
-    float: right;
-    margin-right: 0;
-    margin-left: 55%;
-}
-#experience .job-card:nth-child(odd) {
-    float: left;
-    margin-right: 55%;
-    margin-left: 0;
-}
-
-/* Timeline Dot */
-.job-card::before {
-    content: '';
-    position: absolute;
-    top: 25px;
-    width: 12px;
-    height: 12px;
-    background-color: #3498db;
-    border-radius: 50%;
-    z-index: 10;
-    border: 3px solid #e9ecf1;
-}
-
-#experience .job-card:nth-child(odd)::before {
-    right: -30px;
-}
-
-#experience .job-card:nth-child(even)::before {
-    left: -30px;
-}
-
-.duration {
-    font-style: italic;
-    color: #777;
-    margin-top: -5px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.job-card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.job-card li {
-    padding-left: 1.2em;
-    text-indent: -1.2em;
-    margin-bottom: 5px;
-}
-
-.job-card li:before {
-    content: "»";
-    color: #3498db;
-    font-weight: bold;
-    display: inline-block;
-    width: 1.2em;
-}
-
-/* Clear floating elements for timeline */
-#experience::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Education Section */
-.edu-item {
-    margin-bottom: 15px;
-    border-left: 3px solid #bdc3c7;
-    padding-left: 15px;
-}
-
-/* Footer */
-footer {
-    background: #34495e;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 30px;
-    font-size: 0.9em;
-}
-
-/* Responsive Adjustments: Remove Timeline on small screens */
-@media (max-width: 768px) {
-    /* Remove vertical line */
-    #experience::before {
-        display: none;
-    }
-    /* Reset job card width and alignment */
-    .job-card {
-        width: 100%;
-        margin: 0 0 20px 0;
-        float: none !important;
-    }
-    /* Remove timeline dots */
-    .job-card::before {
-        display: none;
-    }
-    
-    header h1 {
-        font-size: 2.5em;
-    }
-    nav a {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-    .contact-info p {
-        display: block;
-        margin: 5px 0;
-    }
+/* -------------------------------------------------------------------------
+ * EDUCATION
+ * ------------------------------------------------------------------------- */
+.education {
+    masters: "Master’s in Computer Science (Lamar University, Beaumont, TX)"; /* cite: 45, 46 */
+    masters-completion: "Dec 2024"; /* cite: 45 */
+    bachelors: "B. Tech in Computer Engineering (JNT University, Kakinada, India)"; /* cite: 47, 48 */
+    bachelors-completion: "Sept 2022"; /* cite: 47 */
 }
