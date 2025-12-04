@@ -1,0 +1,159 @@
+/* General Styling & Setup */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light gray background */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header/Hero Section */
+header {
+    background: #007acc; /* Professional blue color, common in tech */
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+header h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.contact-info p {
+    margin: 5px 15px;
+    display: inline-block;
+}
+
+/* Navigation Bar */
+nav {
+    background: #333;
+    color: white;
+    position: sticky; /* Keeps the nav bar visible when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #005f99;
+}
+
+/* Main Content Sections */
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #007acc;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+/* Card Styling for sections */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skills-grid div {
+    padding: 15px;
+    background: #eef;
+    border-radius: 5px;
+}
+
+.skills-grid h4 {
+    color: #007acc;
+}
+
+/* Experience Section */
+.job-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #007acc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.duration {
+    font-style: italic;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.job-card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.job-card li {
+    margin-bottom: 8px;
+}
+
+/* Education Section */
+.edu-item {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav a {
+        padding: 10px 10px;
+        font-size: 0.9em;
+    }
+    
+    .contact-info p {
+        display: block;
+        margin: 5px 0;
+    }
+}
