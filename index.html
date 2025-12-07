@@ -5,121 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meghana Puvvadi - DevOps Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
-    <header id="home">
+    <header id="hero">
         <div class="container">
-            <h1>MEGHANA PUVVADI</h1>
-            <h2>DevOps Engineer</h2>
-            <p>3+ years of experience in automating, building, deploying, and releasing code.</p>
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> +1 409-454-0070</p>
-                <p><i class="fas fa-envelope"></i> puvvadimeghana2000@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> TX </p>
-            </div>
+            <h1 class="name">MEGHANA PUVVADI</h1>
+            <p id="terminal-text"></p>
+            <span id="cursor" class="blink">|</span>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
+    <section class="container primary-summary">
+        <p class="role">DevOps Engineer</p>
+        <p class="summary-line">3+ years of experience in automating, building, deploying, and releasing code.</p>
+        <div class="contact-info">
+            <span>+1 409-454-0070</span> |
+            <span>puvvadimeghana2000@gmail.com</span> |
+            <span>TX</span>
+        </div>
+        <nav class="navigation">
             <a href="#summary">Summary</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
+        </nav>
+    </section>
+
+    <hr>
+
+    <section class="container section-card" id="summary">
+        <h2><span class="emoji">📝</span> Professional Summary</h2>
+        <p>A **DevOps Engineer** with over 3+ years of experience focusing on **infrastructure automation** using tools like **Chef** and **Ansible**. Expertise in managing **AWS cloud** resources (EC2, S3, VPC, CloudWatch, etc.) and implementing **CI/CD pipelines** with **Jenkins** and Shell scripts. Well-versed in **Kubernetes** configuration, deployment management, and utilizing **Docker** for containerization.</p>
+    </section>
+
+    <hr>
+
+    <section class="container section-card" id="skills">
+        <h2><span class="emoji">🛠️</span> Technical Skills</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-item hover-card">
+                <label>AWS Cloud Services</label>
+                <div class="progress-bar-container">
+                    <div class="progress-bar aws" style="--skill-level: 90%;">90%</div>
+                </div>
+            </div>
+
+            <div class="skill-item hover-card">
+                <label>Docker & Kubernetes</label>
+                <div class="progress-bar-container">
+                    <div class="progress-bar kubernetes" style="--skill-level: 85%;">85%</div>
+                </div>
+            </div>
+            
+            <div class="skill-item hover-card">
+                <label>CI-CD: Jenkins, Git</label>
+                <div class="progress-bar-container">
+                    <div class="progress-bar cicd" style="--skill-level: 95%;">95%</div>
+                </div>
+            </div>
+
+            <div class="skill-item hover-card">
+                <label>Configuration: Chef, Ansible</label>
+                <div class="progress-bar-container">
+                    <div class="progress-bar config" style="--skill-level: 80%;">80%</div>
+                </div>
+            </div>
+
+            <div class="skill-item hover-card">
+                <label>Scripting: Python, Shell</label>
+                <div class="progress-bar-container">
+                    <div class="progress-bar scripting" style="--skill-level: 75%;">75%</div>
+                </div>
+            </div>
+
         </div>
-    </nav>
+    </section>
 
-    <main class="container">
+    <hr>
 
-        <section id="summary" class="card">
-            <h3><i class="fas fa-clipboard-list"></i> Professional Summary</h3>
-            <p>A DevOps Engineer with over 3+ years of experience focusing on infrastructure automation using tools like Chef and Ansible. Expertise in managing AWS cloud resources (EC2, S3, VPC, CloudWatch, etc.) and implementing CI/CD pipelines with Jenkins and Shell scripts. Well-versed in Kubernetes configuration, deployment management, and utilizing Docker for containerization.</p>
-        </section>
-
-        <section id="skills" class="card">
-            <h3><i class="fas fa-tools"></i> Technical Skills</h3>
-            <div class="skills-grid">
-                <div>
-                    <h4>Methodologies</h4>
-                    <p>SDLC, Agile, Waterfall </p>
-                </div>
-                <div>
-                    <h4>Configuration/Monitoring</h4>
-                    <p>Chef, Ansible, Nagios, Splunk </p>
-                </div>
-                <div>
-                    <h4>Containers/Orchestration</h4>
-                    <p>Docker, Kubernetes </p>
-                </div>
-                <div>
-                    <h4>AWS Services (Key)</h4>
-                    <p>EC2, IAM, S3, VPC, CloudFormation, RDS, CloudWatch </p>
-                </div>
-                <div>
-                    <h4>CI-CD/Build Tools</h4>
-                    <p>Jenkins, Maven, Gradle, Ant </p>
-                </div>
-                <div>
-                    <h4>Scripting/Languages</h4>
-                    <p>Python, Perl, Shell Scripting </p>
-                </div>
-                <div>
-                    <h4>Web/App Servers</h4>
-                    <p>Nginx, Apache Tomcat, JBoss, Web Logic </p>
-                </div>
-                <div>
-                    <h4>Version Control/Other</h4>
-                    <p>Git, GitHub, JIRA, Junit, ServiceNow </p>
+    <section class="container section-card" id="experience">
+        <h2><span class="emoji">💼</span> Experience</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <h3 class="job-title-header hover-card">
+                    DevOps Engineer | Assurant <span class="dates">Aug 2024 – Present</span>
+                    <button class="toggle-btn" aria-expanded="false">+</button>
+                </h3>
+                <div class="job-details collapsed">
+                    <ul>
+                        <li>Set up and built AWS infrastructure (VPC, EC2, S3, RDS) using **Cloud Formation** JSON templates.</li>
+                        <li>Implemented Continuous Integration (CI) and Continuous Delivery (CD) with **Jenkins** and **Shell scripts**.</li>
+                        <li>Collaborated to set up a continuous delivery environment using **Docker**.</li>
+                        <li>Automated system operations by creating **Chef Cookbooks** using recipes.</li>
+                        <li>Performed system monitoring using **Nagios** and **CloudWatch** in AWS.</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        
-        <section id="experience">
-            <h3><i class="fas fa-project-diagram"></i> Experience</h3>
-            
-            <div class="job-card">
-                <h4>DevOps Engineer | Assurant </h4>
-                <p class="duration">Aug 2024 – Present</p>
-                <ul>
-                    <li>Set up and built AWS infrastructure (VPC, EC2, S3, RDS) using Cloud Formation JSON templates.</li>
-                    <li>Implemented Continuous Integration (CI) and Continuous Delivery (CD) with Jenkins and Shell scripts.</li>
-                    <li>Collaborated to set up a continuous delivery environment using Docker.</li>
-                    <li>Automated system operations by creating Chef Cookbooks using recipes.</li>
-                    <li>Performed system monitoring using Nagios and CloudWatch in AWS.</li>
-                </ul>
+
+            <div class="timeline-item">
+                <h3 class="job-title-header hover-card">
+                    DevOps Engineer | Endurance Technologies, India <span class="dates">Jan 2021 – Dec 2022</span>
+                    <button class="toggle-btn" aria-expanded="false">+</button>
+                </h3>
+                <div class="job-details collapsed">
+                    <ul>
+                        <li>Automated server infrastructure setup using **Ansible**, shell, and **Python scripts**.</li>
+                        <li>Managed and automated tasks on various **Docker** components and created Docker images.</li>
+                        <li>Utilized **Kubernetes** and Docker for the runtime environment of the CI/CD system.</li>
+                        <li>Integrated **GIT** into **Jenkins** to automate the code check-out process.</li>
+                        <li>Enabled auditing for the Kubernetes Cluster and monitored logs.</li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="job-card">
-                <h4>DevOps Engineer | Endurance Technologies, India </h4>
-                <p class="duration">Jan 2021 – Dec 2022</p>
-                <ul>
-                    <li>Automated server infrastructure setup using Ansible, shell, and Python scripts.</li>
-                    <li>Managed and automated tasks on various Docker components like Docker Hub, Docker Registry, and created Docker images.</li>
-		    <li>Utilized kubernetes and Docker for the runtime environment of the CI/CD system.</li>
-                    <li>Integrated GIT into Jenkins to automate the code check-out process.</li>
-                    <li>Enabled auditing for the Kubernetes Cluster and monitored logs.</li>
-                </ul>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="education" class="card">
-            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-            <div class="edu-item">
-                <h4>Master’s in Computer Science</h4>
-                <p>Lamar University, Beaumont, TX | Dec 2024</p>
-            </div>
-            <div class="edu-item">
-                <h4>B. Tech in Computer Engineering</h4>
-                <p>JNT University, Kakinada, India | Sept 2022</p>
-            </div>
-        </section>
+    <hr>
 
-    </main>
-
+    <section class="container section-card" id="education">
+        <h2><span class="emoji">🎓</span> Education</h2>
+        <div class="education-item">
+            <h3>Master’s in Computer Science</h3>
+            <p>Lamar University, Beaumont, TX | Dec 2024</p>
+        </div>
+        <div class="education-item">
+            <h3>B. Tech in Computer Engineering</h3>
+            <p>JNT University, Kakinada, India | Sept 2022</p>
+        </div>
+    </section>
+    
     <footer>
-        <p>&copy; <span id="current-year"></span> Meghana Puvvadi. Built for GitHub Portfolio.</p>
+        <div class="container">
+            <p>© 2025 Meghana Puvvadi. Built for GitHub Portfolio.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
