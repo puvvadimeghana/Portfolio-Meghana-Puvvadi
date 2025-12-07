@@ -1,145 +1,258 @@
-/* =========================================================================
- * GLOBAL STYLING & CONTAINERS
- * ========================================================================= */
-:root {
-    --color-primary: #1e3d59;     /* Deep Navy Blue */
-    --color-secondary: #587392;   /* Muted Blue/Gray */
-    --color-accent: #ff6e40;      /* Vibrant Orange/Red Accent */
-    --color-background: #ffffff;  /* Pure White Background for Content */
-    --color-page-bg: #f4f4f7;     /* Light Gray for the surrounding page */
-    --font-stack: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-}
-
+/* --- GLOBAL STYLES --- */
 body {
-    font-family: var(--font-stack);
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--color-page-bg);
+    background-color: #f4f7f9;
     color: #333;
 }
 
-/* -------------------------------------------------------------------------
- * PAGE WRAPPER: Centers content and limits width (Crucial Change)
- * ------------------------------------------------------------------------- */
-.page-wrapper {
-    max-width: 1100px; /* Maximum width of the resume block */
-    margin: 40px auto; /* Centers the whole block horizontally with margin top/bottom */
-    background-color: var(--color-background);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); /* Subtle 3D lift */
-    border-radius: 8px;
-    overflow: hidden; /* Contains floating elements */
-    padding: 40px 0;
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* -------------------------------------------------------------------------
- * GRID LAYOUT: Defines the two columns within the centered wrapper
- * ------------------------------------------------------------------------- */
-#main-layout {
-    display: grid;
-    /* Defines 2 columns: 1 for the profile (fixed width), 3 for the content (flexible) */
-    grid-template-columns: 1fr 3fr; 
-    gap: 30px;
-    padding: 0 40px;
-}
-
-/* =========================================================================
- * LEFT COLUMN: PROFILE (1/4 Width)
- * ========================================================================= */
-#left-column {
-    background: transparent; /* Seamless with the page background */
-    padding-right: 20px;
-    border-right: 1px solid #eee; /* Light separator line */
-}
-
-#left-column header {
-    padding: 0;
-    text-align: left;
-    color: var(--color-primary);
-    margin-bottom: 25px;
-}
-
-#left-column h1 {
-    font-size: 1.6em;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
-#left-column h2 {
-    font-size: 1em;
-    color: var(--color-secondary);
+h2 {
+    color: #007bff;
+    border-bottom: 2px solid #e0e6ec;
+    padding-bottom: 10px;
     margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
 }
 
-/* Contact Info & Navigation */
-.contact-info {
-    font-size: 0.9em;
-    padding: 15px 0 0 0;
-    border-top: 1px solid #ddd;
-    margin-top: 15px;
-}
-
-.contact-info p {
-    margin: 8px 0;
-}
-
-.contact-info i {
-    color: var(--color-accent);
+.emoji {
     margin-right: 10px;
 }
 
-#left-column nav {
-    display: none; /* Hide navigation, use scrolling in the right column */
+hr {
+    border: none;
+    border-top: 1px solid #e0e6ec;
 }
 
-/* Profile Summary in Left Column */
-#profile-summary {
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
+/* --- HERO & SUMMARY --- */
+#hero {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 80px 0 50px;
+    text-align: center;
 }
 
-#profile-summary h3 {
-    color: var(--color-primary);
-    font-size: 1.1em;
-    border-bottom: none;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+#hero .name {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.primary-summary {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.primary-summary .role {
+    font-size: 1.5em;
     font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
 }
 
-.tagline {
-    font-weight: 500;
-    font-size: 0.95em;
+.primary-summary .summary-line {
+    font-style: italic;
+    color: #666;
     margin-bottom: 15px;
-    color: var(--color-secondary);
 }
 
-#profile-summary ul {
-    list-style: none;
-    padding-left: 0;
+.contact-info span {
+    margin: 0 10px;
+    color: #007bff;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #2c3e50;
+    margin: 0 15px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.navigation a:hover {
+    border-bottom: 2px solid #007bff;
+}
+
+/* --- 1. TERMINAL TYPING EFFECT STYLES --- */
+#terminal-text {
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    overflow: hidden;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-bottom: 0;
+    color: #2ecc71; /* Green text for a terminal feel */
+}
+
+#cursor {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.blink {
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { color: transparent }
+    50% { color: inherit }
+}
+
+/* --- 2. 3D CARD HOVER EFFECT --- */
+.hover-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transform-style: preserve-3d;
+}
+
+.hover-card:hover {
+    /* Lifts the card and adds a slight 3D tilt */
+    transform: perspective(1000px) translateZ(10px) scale(1.01) rotateX(0.5deg) rotateY(0.5deg);
+    /* Makes the shadow bigger and darker */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- 3. DYNAMIC SKILL PROGRESS BARS --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.skill-item {
+    padding: 0; /* Override padding from .hover-card for better bar alignment */
+}
+.skill-item label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 25px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 25px;
+    color: white;
+    font-size: 0.8em;
+    width: var(--skill-level); /* Will be set to 0% initially by JS */
+    transition: width 1.5s ease-out; /* Smooth animation */
+    
+    /* Default color for skills */
+    background-color: #2ecc71; 
+}
+
+/* Skill Specific Colors */
+.progress-bar.aws { background-color: #ff9900; }
+.progress-bar.kubernetes { background-color: #326ce5; }
+.progress-bar.cicd { background-color: #e67e22; }
+.progress-bar.config { background-color: #9b59b6; }
+.progress-bar.scripting { background-color: #f1c40f; color: #333; }
+
+
+/* --- 4. COLLAPSIBLE EXPERIENCE TIMELINE --- */
+.timeline {
+    border-left: 3px solid #ccc;
+    padding-left: 20px;
+    position: relative;
+    margin-top: 30px;
+}
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -28px; /* Aligns with the border */
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    z-index: 1;
+}
+.job-title-header {
+    cursor: pointer;
+    background-color: #eaf3ff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    /* Reset 3D transforms for better alignment */
+    transform: none !important; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.job-title-header:hover {
+    background-color: #d8e6ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.dates {
+    font-weight: normal;
     font-size: 0.9em;
+    color: #666;
+}
+.toggle-btn {
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 1.2em;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    line-height: 1;
 }
 
-#profile-summary li {
-    margin-bottom: 8px;
-    color: #444;
+/* Collapsible Details */
+.job-details {
+    max-height: 500px; /* Max height for open state */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    padding-top: 10px;
+}
+.job-details.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
 }
 
-/* =========================================================================
- * RIGHT COLUMN: DETAILED CONTENT (3/4 Width)
- * ========================================================================= */
-#right-column {
-    padding: 0; /* Remove padding because the wrapper handles it */
+.job-details ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.job-details li {
+    background: white;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.content-container {
-    padding: 0;
+/* --- FOOTER --- */
+footer {
+    background-color: #2c3e50;
+    color: #95a5a6;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
 }
-
-/* Section Headings */
-h3 {
-    color: var(--color-primary);
-    border-bottom: 3px solid var
